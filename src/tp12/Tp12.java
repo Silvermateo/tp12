@@ -26,16 +26,23 @@ public class Tp12 {
                     + " VALUES (?, ?, ?, ?, ?, ?)";
             
             PreparedStatement pstmtInsertEmpleado = conn.prepareStatement(sqlInsertEmpleado);
-            //primer empleado
+            //Primer empleado
             pstmtInsertEmpleado.setInt(1, 4);
-            pstmtInsertEmpleado.setLong(2, 35767572L);
+            pstmtInsertEmpleado.setLong(2, 44163996);
             pstmtInsertEmpleado.setString(3, "Cardona");
             pstmtInsertEmpleado.setString(4, "Silver Mateo");
             pstmtInsertEmpleado.setInt(5, 1);
             pstmtInsertEmpleado.setInt(6, 1);
             pstmtInsertEmpleado.executeUpdate();
             
-            
+            //Segundo empleado
+            pstmtInsertEmpleado.setInt(1, 5);
+            pstmtInsertEmpleado.setLong(2, 41920402);
+            pstmtInsertEmpleado.setString(3, "Ferron");
+            pstmtInsertEmpleado.setString(4, "Rodrigo");
+            pstmtInsertEmpleado.setInt(5, 1);
+            pstmtInsertEmpleado.setInt(6, 1);
+            pstmtInsertEmpleado.executeUpdate();
             
             
             
