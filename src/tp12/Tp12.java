@@ -16,7 +16,7 @@ public class Tp12 {
     public static void main(String[] args) {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            String URL = "jdbc:mariadb://localhost:3306/construirsa_tp12";
+            String URL = "jdbc:mariadb://localhost:3306/construirsa";
             String USUARIO="root";
             String PASSWORD ="";
             Connection conn=DriverManager.getConnection(URL,USUARIO,PASSWORD);
