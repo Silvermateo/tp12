@@ -44,6 +44,52 @@ public class Tp12 {
             pstmtInsertEmpleado.setInt(6, 1);
             pstmtInsertEmpleado.executeUpdate();
             
+            // Tercer empleado
+            pstmtInsertEmpleado.setInt(1, 6);
+            pstmtInsertEmpleado.setLong(2, 34567890L);
+            pstmtInsertEmpleado.setString(3, "Moran");
+            pstmtInsertEmpleado.setString(4, "Ramiro");
+            pstmtInsertEmpleado.setInt(5, 3);
+            pstmtInsertEmpleado.setInt(6, 1);
+            
+            
+            int filas = pstmtInsertEmpleado.executeUpdate();
+            if(filas>0){
+                JOptionPane.showMessageDialog(null, "Trabajador agregado ");
+            }
+            //---------agregar 2 herramientaas
+            String sqlInsertHerramienta = "INSERT INTO herramienta (nombre, descripcion, stock, estado)"
+                    + " VALUES (?, ?, ?, ?)";
+            
+            PreparedStatement pstmtInsertHerramienta = conn.prepareStatement(sqlInsertHerramienta);
+            
+           pstmtInsertHerramienta.setString(1, "RotoMartillo");
+            pstmtInsertHerramienta.setString(2, "electrico");
+            pstmtInsertHerramienta.setInt(3, 20);
+            pstmtInsertHerramienta.setInt(4, 1);
+            pstmtInsertHerramienta.executeUpdate();
+            
+            pstmtInsertHerramienta.setString(1, "Motosierra");
+            pstmtInsertHerramienta.setString(2, "combustible");
+            pstmtInsertHerramienta.setInt(3, 20);
+            pstmtInsertHerramienta.setInt(4, 1);
+            pstmtInsertHerramienta.executeUpdate();
+            
+            
+            //Listar las herramientas
+            String sqlListarHerramientas = "SELECT * FROM herramienta WHERE stock > 10";
+            Statement stmtListarHerramientas = conn.createStatement();
+            ResultSet rsListarHerramientas = stmtListarHerramientas.executeQuery(sqlListarHerramientas);
+            while (rsListarHerramientas.next()) {
+                System.out.println(rsListarHerramientas.getString("nombre"));
+            }
+            
+            // Dar de baja al primer empleado ingresado a la base de datos
+            String sqlDarDeBajaEmpleado = "UPDATE empleado SET estado = 0 WHERE id_empleado = 1";
+            Statement stmtDarDeBajaEmpleado = conn.createStatement();
+            
+            stmtDarDeBajaEmpleado.executeUpdate(sqlDarDeBajaEmpleado);
+            
             
             
             
