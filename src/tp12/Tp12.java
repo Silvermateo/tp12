@@ -46,7 +46,7 @@ public class Tp12 {
             
             // Tercer empleado
             pstmtInsertEmpleado.setInt(1, 6);
-            pstmtInsertEmpleado.setLong(2, 34567890L);
+            pstmtInsertEmpleado.setLong(2, 42407818);
             pstmtInsertEmpleado.setString(3, "Moran");
             pstmtInsertEmpleado.setString(4, "Ramiro");
             pstmtInsertEmpleado.setInt(5, 3);
